@@ -1,7 +1,7 @@
 class Ship {
   float x, y;
   float size;
-  
+
   float p1x, p1y, p2x, p2y, p3x, p3y;
   color colour;
 
@@ -11,10 +11,10 @@ class Ship {
     this.y = y;
     this.size = size;
   }
-  
-   Ship(float p1x, float p1y, float p2x, float p2y, float p3x, float p3y) {
+
+  Ship(float p1x, float p1y, float p2x, float p2y, float p3x, float p3y) {
     // super(p1x, p1y);
-   
+
     // this.width = width;
     // this.height = height;
     this.p1x=p1x;
@@ -33,8 +33,17 @@ class Ship {
   }
 
   void display() {
+    print("ship displayed");
     fill(230, 190, 190);
 
-     triangle(p1x, p1y, p2x, p2y, p3x, p3y);
+    //this.p1x +=x;
+    //this.p1y +=y;
+    //this.p2x +=x;
+    //this.p2y +=y;
+    //this.p3x +=x;
+    //this.p3y +=y;
+
+
+    triangle(p1x, p1y, p2x, p2y, p3x, p3y);
   }
 }

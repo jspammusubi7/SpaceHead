@@ -1,0 +1,57 @@
+Head head;
+Ship ship;
+Star star;
+
+Star[] stars = new Star[100];
+float x = 400, y = 720, z;
+float size = 15;
+
+
+void setup() {
+  size(800, 800, P3D);
+  ship = new Ship(x, y - size,
+    x - size, y + size,
+    x + size, y + size);
+  head = new Head(160);
+  star = new Star(100, 100, 1);
+  // 2. Instantiate each individual object using a loop
+  for (int i = 0; i < stars.length; i++) {
+    stars[i] = new Star(random(width), random(height));
+  }
+}
+
+void draw () {
+
+  background(60, 80, 120);
+
+  star.display();
+  for (int i = 0; i < stars.length; i++) {
+    stars[i].display();
+    stars[i].move();
+  }
+  if (keyPressed) {
+    if (key == 'a' || (key == CODED && keyCode == LEFT)) {
+      ship.move(-.2, 0);
+    }
+    if (key == 'd' || (key == CODED && keyCode == RIGHT)) {
+      ship.move(.2, 0);
+    }
+    if (key == 'w'|| (key == CODED && keyCode == UP)) {
+      ship.move(0, -.2);
+    }
+    if (key == 's' || (key == CODED && keyCode == DOWN)) {
+      ship.move(0, .2);
+    }
+
+    //star1.display();
+    //star2.display();
+    // star3.display();
+    // star4.display();
+    ship.display();
+    head.display();
+  }
+
+
+  ship.display();
+  head.display();
+}

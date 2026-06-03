@@ -29,7 +29,32 @@ void draw () {
     stars[i].display();
     stars[i].move();
   }
+   if (keyPressed) {
+    if (key == 'a' || (key == CODED && keyCode == LEFT)) {
+      ship.move(-.1, 0);
+    }
+      if (key == 'd' || (key == CODED && keyCode == RIGHT)) {
+        ship.move(.1, 0);
+      }
+      if (key == 'w'|| (key == CODED && keyCode == UP)) {
+        ship.move(0, -.1);
+      }
+      if (key == 's' || (key == CODED && keyCode == DOWN)) {
+        ship.move(0, .1);
+      }
+
+        //star1.display();
+        //star2.display();
+        // star3.display();
+        // star4.display();
+        // ship.display();
+        // head.display();
+      
+    }
+  
+
   ship.display();
   head.display();
 
 }
+

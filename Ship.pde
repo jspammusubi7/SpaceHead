@@ -36,14 +36,16 @@ class Ship {
     print("ship displayed");
     fill(230, 190, 190);
 
-    //this.p1x +=x;
-    //this.p1y +=y;
-    //this.p2x +=x;
-    //this.p2y +=y;
-    //this.p3x +=x;
-    //this.p3y +=y;
+    this.p1x +=x;
+    this.p1y +=y;
+    this.p2x +=x;
+    this.p2y +=y;
+    this.p3x +=x;
+    this.p3y +=y;
 
 
     triangle(p1x, p1y, p2x, p2y, p3x, p3y);
+    x=0;
+    y=0;
   }
 }

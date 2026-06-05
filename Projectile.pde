@@ -1,75 +1,65 @@
-//// Store multiple projectiles in a dynamic list
-//ArrayList<Projectile> lasers = new ArrayList<Projectile>();
-//float playerX, playerY;
+//class Projectile {
+//  float x, y;
+//  float speed = 8; // Adjust speed as needed
+
+//  Projectile(float startX, float startY) {
+//    x = startX;
+//    y = startY;
+//  }
+
+//  void update() {
+//    y -= speed; // Moves the projectile upwards
+//  }
+
+//  void display() {
+//    fill(255, 0, 0); // Red projectile
+//    noStroke();
+//    ellipse(x, y, 8, 16); // Draw as a bullet shape
+//  }
+  
+//  // Returns true if the projectile goes off-screen
+//  boolean isOffScreen() {
+//    return y < 0;
+//  }
+//}
+
+
+
+//ArrayList<Projectile> projectiles;
+//float shipX;
+//float shipY;
 
 //void setup() {
-//  size(800, 600);
-//  playerX = width / 2;
-//  playerY = height - 50;
+//  size(600, 600);
+//  projectiles = new ArrayList<Projectile>();
+//  ship.x = width / 2;
+//  ship.y = height - 50;
 //}
 
 //void draw() {
-//  background(255); // Clear the screen
+//  background(50); // Clear the screen
   
-//  // Draw player
-//  fill(0);
-//  ellipse(playerX, playerY, 30, 30);
-  
-//  // Update and display all projectiles
-//  // Iterate backwards so we can safely remove dead bullets
-//  for (int i = lasers.size() - 1; i >= 0; i--) {
-//    Projectile l = lasers.get(i);
-//    l.update();
-//    l.display();
+//  //// Draw the player
+//  //fill(255);
+//  //rectMode(CENTER);
+//  //rect(playerX, playerY, 40, 20);
+
+//  // Iterate backwards to safely remove off-screen projectiles
+//  for (int i = projectiles.size() - 1; i >= 0; i--) {
+//    Projectile p = projectiles.get(i);
+//    p.update();
+//    p.display();
     
-//    // Remove bullet if it goes off-screen
-//    if (b.isOffScreen()) {
-//      bullets.remove(i);
+//    // Remove bullet if it goes off screen
+//    if (p.isOffScreen()) {
+//      projectiles.remove(i);
 //    }
 //  }
 //}
 
-//// Fire a projectile on mouse click
-//void mousePressed() {
-//  float speed = 10;
-  
-//  // Calculate direction vector using PVector for smooth angle math
-//  PVector target = new PVector(mouseX, mouseY);
-//  PVector start = new PVector(playerX, playerY);
-//  PVector direction = PVector.sub(target, start);
-  
-//  direction.normalize(); // Get the unit vector (length of 1)
-//  direction.mult(speed); // Set the actual velocity
-  
-//  // Add new projectile to the list
-//  lasers.add(new Projectile(playerX, playerY, direction));
-//}
-
-
-
-//class Projectile {
-//  float x, y;
-//  PVector velocity;
-//  float size = 8;
-  
-//  Projectile(float startX, float startY, PVector vel) {
-//    this.x = startX;
-//    this.y = startY;
-//    this.velocity = vel;
-//  }
-  
-//  void update() {
-//    x += velocity.x;
-//    y += velocity.y;
-//  }
-  
-//  void display() {
-//    fill(255, 0, 0);
-//    noStroke();
-//    ellipse(x, y, size, size);
-//  }
-  
-//  boolean isOffScreen() {
-//    return x < 0 || x > width || y < 0 || y > height;
+//void keyPressed() {
+//  // Fire projectile when the space bar is pressed
+//  if (key == ' ') {
+//    projectiles.add(new Projectile(shipX, shipY));
 //  }
 //}

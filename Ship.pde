@@ -33,7 +33,7 @@ class Ship {
   }
 
   void display() {
-    print("ship displayed");
+    //print("ship displayed");
     fill(230, 190, 190);
 
     this.p1x +=x;

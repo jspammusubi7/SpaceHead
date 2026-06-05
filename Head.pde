@@ -52,10 +52,12 @@ class Head {
 
     // Render the textured sphere
     pushMatrix();
-    //translate(width/2, height/2, 0);
-    translate(width/2, height/2.5, 0);
-    rotateY(frameCount * 0.01); 
-    shape(globe);
+    //translate(width/2, height/2.5, 0);
+    //rotateY(frameCount * 0.005); 
+    //shape(globe);
+    //    //fill(220, 180, 100);
+
+    //sphere(160);
     popMatrix();
   }
 

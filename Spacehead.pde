@@ -93,8 +93,10 @@ void draw() {
 
       // Calculate noise using X, Y, and Z (time)
       float bright = noise(xoff, yoff, zoff) * 255;
+      //bright = 255;
       //fill(220, 180, 100);
       tex.pixels[x+y*width] = color(220, 180, 100, bright);
+      //tex.pixels[x+y*tex.width] = color(bright * 0.86, bright * 0.70, bright * 0.39);
       yoff += .01; // Increment y space
       // println(targetX);
     }
@@ -102,7 +104,7 @@ void draw() {
   }
   tex.updatePixels();
 
-  zoff += .05; // Advance time to animate the noise
+  zoff += .0005; // Advance time to animate the noise
 
 
 
@@ -110,12 +112,17 @@ void draw() {
 
   // Render the textured sphere
   pushMatrix();
+
   //translate(width/2, height/2, 0);
   translate(width/2, height/2.5, 0);
+
+  fill(220, 180, 100);
+
+  sphere(160);
   //translate(width/2,targetX, 0);
   //translate(targetX, height/2, 0);
-  //rotateY(frameCount * 1);
-  rotateY(1800);
+  //rotateY(frameCount * .001);
+  rotateY(PI);
   shape(globe);
   popMatrix();
 }

@@ -1,11 +1,39 @@
-
 class Head {
+  float x, y;
+  float size;
+
+  Head(float x, float y, float size) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+  }
+
+ Head(float size) {
+    this.size = size;
+  }
+
+
+  void display () {
+
+    lights();
+
+    translate(width/2, height/2.5, 0);
+    noStroke();
+    fill(220, 170, 60);
+
+    sphere(160);
+  }
+}
+
+
+
+class Head2 {
   float x, y;
   float size;
   PGraphics tex;
   PShape globe;
 
-  Head(float x, float y, float size) {
+  Head2(float x, float y, float size) {
     this.x = x;
     this.y = y;
     this.size = size;
@@ -14,7 +42,7 @@ class Head {
     initializeGlobe(this.size); // Pass the variable 'size' directly
   }
 
-  Head(float size) {
+  Head2(float size) {
     this.size = size;
     noStroke();
     tex = createGraphics(texSize, texSize, P2D);

@@ -1,6 +1,11 @@
 class Ship {
   float x, y;
   float size;
+  
+  //float posX = 200;
+  //float posY = 200;
+  //float angle = 0; // Stored in radians
+  //float speed = 3;
 
   float p1x, p1y, p2x, p2y, p3x, p3y;
   color colour;
@@ -29,7 +34,7 @@ class Ship {
   void move(float xSpeed, float ySpeed) {
     this.x += xSpeed;
     this.y += ySpeed;
-    display();
+    //display();
   }
 
   void display() {
@@ -49,3 +54,47 @@ class Ship {
     y=0;
   }
 }
+
+
+
+
+
+
+
+//float posX = 200;
+//float posY = 200;
+//float angle = 0; // Stored in radians
+//float speed = 3;
+
+//void setup() {
+//  size(600, 600);
+//}
+
+//void draw() {
+//  background(30);
+
+//  // 1. Update position based on the current heading angle
+//  if (keyPressed && keyCode == UP) {
+//    posX += cos(angle) * speed;
+//    posY += sin(angle) * speed;
+//  }
+  
+//  // 2. Adjust heading rotation angle
+//  if (keyPressed && keyCode == LEFT) {
+//    angle -= 0.05;
+//  }
+//  if (keyPressed && keyCode == RIGHT) {
+//    angle += 0.05;
+//  }
+
+//  // 3. Render the rotated object
+//  pushMatrix();
+//  translate(posX, posY); 
+//  rotate(angle);         
+  
+//  // Draw relative to (0,0)
+//  fill(0, 150, 255);
+//  stroke(255);
+//  triangle(20, 0, -10, -10, -10, 10); // Points right by default
+//  popMatrix();
+//}
